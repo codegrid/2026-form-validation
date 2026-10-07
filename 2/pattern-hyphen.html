@@ -16,7 +16,7 @@ p{margin:4px 0;font-size:14px;color:#555}
 </style>
 </head>
 <body>
-<form action="../sent.html" method="get">
+<form>
   <label for="invalid-pattern">pattern="[0-9-]+"（判定されない）</label>
   <input type="text" id="invalid-pattern" name="invalid-pattern" pattern="[0-9-]+">
 
@@ -25,5 +25,13 @@ p{margin:4px 0;font-size:14px;color:#555}
   <p>どちらにも「abc」のように数字とハイフン以外の文字を入力して、送信してみてください。</p>
   <div><button type="submit">送信</button></div>
 </form>
+<script>
+// デモのため、実際には送信せずにメッセージを表示する
+document.querySelector("form").addEventListener("submit", (event) => {
+  if (event.defaultPrevented) return;
+  event.preventDefault();
+  alert("送信しました（デモのため、実際には何も送信していません）");
+});
+</script>
 </body>
 </html>

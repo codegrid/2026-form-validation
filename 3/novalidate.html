@@ -16,10 +16,18 @@ p{margin:4px 0;font-size:14px;color:#555}
 </style>
 </head>
 <body>
-<form action="../sent.html" method="get" novalidate>
+<form novalidate>
   <label for="email">メールアドレス</label>
   <input type="email" id="email" name="email" required>
   <div><button type="submit">送信</button></div>
 </form>
+<script>
+// デモのため、実際には送信せずにメッセージを表示する
+document.querySelector("form").addEventListener("submit", (event) => {
+  if (event.defaultPrevented) return;
+  event.preventDefault();
+  alert("送信しました（デモのため、実際には何も送信していません）");
+});
+</script>
 </body>
 </html>

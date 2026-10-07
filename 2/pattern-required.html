@@ -16,7 +16,7 @@ p{margin:4px 0;font-size:14px;color:#555}
 </style>
 </head>
 <body>
-<form action="../sent.html" method="get">
+<form>
   <label for="postal-code-optional">郵便番号（pattern属性のみ）</label>
   <input type="text" id="postal-code-optional" name="postal-code-optional" pattern="\d{3}-?\d{4}">
 
@@ -24,5 +24,13 @@ p{margin:4px 0;font-size:14px;color:#555}
   <input type="text" id="postal-code" name="postal-code" pattern="\d{3}-?\d{4}" required>
   <div><button type="submit">送信</button></div>
 </form>
+<script>
+// デモのため、実際には送信せずにメッセージを表示する
+document.querySelector("form").addEventListener("submit", (event) => {
+  if (event.defaultPrevented) return;
+  event.preventDefault();
+  alert("送信しました（デモのため、実際には何も送信していません）");
+});
+</script>
 </body>
 </html>

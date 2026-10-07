@@ -36,5 +36,3 @@ CodeGridの記事「フォームのバリデーションは、ブラウザにど
 |---|---|
 | [3/novalidate.html](https://codegrid.github.io/2026-form-validation/3/novalidate.html) | novalidate属性を付けると、エラーがあっても送信される |
 | [3/custom-error.html](https://codegrid.github.io/2026-form-validation/3/custom-error.html) | 判定はブラウザ、表示は自前で行うフォーム |
-
-`sent.html`は、各デモのフォームを送信したときに表示するページです。

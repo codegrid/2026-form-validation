@@ -16,7 +16,7 @@ p{margin:4px 0;font-size:14px;color:#555}
 </style>
 </head>
 <body>
-<form action="../sent.html" method="get">
+<form>
   <label for="count">個数（step属性の指定なし）</label>
   <input type="number" id="count" name="count" min="0">
 
@@ -24,5 +24,13 @@ p{margin:4px 0;font-size:14px;color:#555}
   <input type="number" id="weight" name="weight" min="0" step="0.1">
   <div><button type="submit">送信</button></div>
 </form>
+<script>
+// デモのため、実際には送信せずにメッセージを表示する
+document.querySelector("form").addEventListener("submit", (event) => {
+  if (event.defaultPrevented) return;
+  event.preventDefault();
+  alert("送信しました（デモのため、実際には何も送信していません）");
+});
+</script>
 </body>
 </html>
