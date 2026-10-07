@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>文字クラスの中のハイフンはエスケープする</title>
+<style>
+body{font-family:sans-serif;padding:16px;line-height:1.6}
+label{display:block;margin-top:12px;font-weight:bold}
+fieldset label{display:inline-block;margin:0 12px 0 0;font-weight:normal}
+fieldset{margin-top:12px;border:1px solid #888;border-radius:4px}
+input,select{font-size:16px;padding:4px 8px;border:2px solid #888;border-radius:4px}
+input[type=radio]{margin-right:4px}
+button{margin-top:16px;font-size:16px;padding:6px 16px}
+p{margin:4px 0;font-size:14px;color:#555}
+</style>
+</head>
+<body>
+<form action="../sent.html" method="get">
+  <label for="invalid-pattern">pattern="[0-9-]+"（判定されない）</label>
+  <input type="text" id="invalid-pattern" name="invalid-pattern" pattern="[0-9-]+">
+
+  <label for="valid-pattern">pattern="[0-9\-]+"（判定される）</label>
+  <input type="text" id="valid-pattern" name="valid-pattern" pattern="[0-9\-]+">
+  <p>どちらにも「abc」のように数字とハイフン以外の文字を入力して、送信してみてください。</p>
+  <div><button type="submit">送信</button></div>
+</form>
+</body>
+</html>

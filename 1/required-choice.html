@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ラジオボタンとセレクトボックスを必須にする</title>
+<style>
+body{font-family:sans-serif;padding:16px;line-height:1.6}
+label{display:block;margin-top:12px;font-weight:bold}
+fieldset label{display:inline-block;margin:0 12px 0 0;font-weight:normal}
+fieldset{margin-top:12px;border:1px solid #888;border-radius:4px}
+input,select{font-size:16px;padding:4px 8px;border:2px solid #888;border-radius:4px}
+input[type=radio]{margin-right:4px}
+button{margin-top:16px;font-size:16px;padding:6px 16px}
+p{margin:4px 0;font-size:14px;color:#555}
+</style>
+</head>
+<body>
+<form action="../sent.html" method="get">
+  <fieldset>
+    <legend>お問い合わせの種類</legend>
+    <label><input type="radio" name="kind" value="work" required>お仕事のご依頼</label>
+    <label><input type="radio" name="kind" value="recruit">採用について</label>
+    <label><input type="radio" name="kind" value="other">その他</label>
+  </fieldset>
+
+  <label for="pref">お住まいの都道府県</label>
+  <select id="pref" name="pref" required>
+    <option value="">選択してください</option>
+    <option value="tokyo">東京都</option>
+    <option value="kanagawa">神奈川県</option>
+    <option value="osaka">大阪府</option>
+  </select>
+  <div><button type="submit">送信</button></div>
+</form>
+</body>
+</html>

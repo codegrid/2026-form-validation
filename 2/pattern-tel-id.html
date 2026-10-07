@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>電話番号と会員IDの書式を指定</title>
+<style>
+body{font-family:sans-serif;padding:16px;line-height:1.6}
+label{display:block;margin-top:12px;font-weight:bold}
+fieldset label{display:inline-block;margin:0 12px 0 0;font-weight:normal}
+fieldset{margin-top:12px;border:1px solid #888;border-radius:4px}
+input,select{font-size:16px;padding:4px 8px;border:2px solid #888;border-radius:4px}
+input[type=radio]{margin-right:4px}
+button{margin-top:16px;font-size:16px;padding:6px 16px}
+p{margin:4px 0;font-size:14px;color:#555}
+</style>
+</head>
+<body>
+<form action="../sent.html" method="get">
+  <label for="tel">電話番号</label>
+  <input
+    type="tel"
+    id="tel"
+    name="tel"
+    autocomplete="tel"
+    pattern="\d{2,4}-?\d{2,4}-?\d{3,4}"
+  >
+  <p>例：03-1234-5678</p>
+
+  <label for="member-id">会員ID</label>
+  <input
+    type="text"
+    id="member-id"
+    name="member-id"
+    pattern="[A-Z]{2}\d{6}"
+  >
+  <p>例：AB123456（英大文字2文字と数字6桁）</p>
+  <div><button type="submit">送信</button></div>
+</form>
+</body>
+</html>
