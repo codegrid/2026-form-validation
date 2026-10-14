@@ -18,6 +18,7 @@ CodeGridの記事「標準機能を選んで使うフォームバリデーショ
 | [1/step.html](https://codegrid.github.io/2026-form-validation/1/step.html) | step属性で小数を受け付ける（指定なしとの比較） |
 | [1/minlength.html](https://codegrid.github.io/2026-form-validation/1/minlength.html) | minlength属性とrequired属性で3文字以上の入力を必須にする |
 | [1/maxlength.html](https://codegrid.github.io/2026-form-validation/1/maxlength.html) | maxlength属性で貼り付けた値が切り捨てられる |
+| [1/maxlength-custom.html](https://codegrid.github.io/2026-form-validation/1/maxlength-custom.html) | setCustomValidity()で文字数の上限を超えたらエラーにする |
 
 ### 第2回 pattern属性と、ブラウザに任せきれないこと
 

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>setCustomValidity()で文字数の上限を超えたらエラーにする</title>
+<style>
+body{font-family:sans-serif;padding:16px;line-height:1.6}
+label{display:block;margin-top:12px;font-weight:bold}
+fieldset label{display:inline-block;margin:0 12px 0 0;font-weight:normal}
+fieldset{margin-top:12px;border:1px solid #888;border-radius:4px}
+input,select{font-size:16px;padding:4px 8px;border:2px solid #888;border-radius:4px}
+input[type=radio]{margin-right:4px}
+button{margin-top:16px;font-size:16px;padding:6px 16px}
+p{margin:4px 0;font-size:14px;color:#555}
+</style>
+</head>
+<body>
+<p>次の文字列をコピーして、ニックネームの入力欄に貼り付けてから送信してください。</p>
+<p><code>コードグリッド太郎です</code></p>
+<form>
+  <label for="nickname">ニックネーム（10文字以内）</label>
+  <input type="text" id="nickname" name="nickname">
+  <div><button type="submit">送信</button></div>
+</form>
+<script>
+const nickname = document.querySelector("#nickname");
+const maxLength = 10;
+
+nickname.addEventListener("input", () => {
+  if (nickname.value.length > maxLength) {
+    nickname.setCustomValidity(`${maxLength}文字以内で入力してください。`);
+  } else {
+    nickname.setCustomValidity("");
+  }
+});
+
+// デモのため、実際には送信せずにメッセージを表示する
+document.querySelector("form").addEventListener("submit", (event) => {
+  if (event.defaultPrevented) return;
+  event.preventDefault();
+  alert("送信しました（デモのため、実際には何も送信していません）");
+});
+</script>
+</body>
+</html>
