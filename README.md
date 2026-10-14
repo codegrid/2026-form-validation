@@ -1,6 +1,6 @@
 # 2026-form-validation
 
-CodeGridの記事「フォームのバリデーションは、ブラウザにどこまで任せられるか」（全3回）のデモです。
+CodeGridの記事「標準機能を選んで使うフォームバリデーション」（全3回）のデモです。
 
 - 記事: https://www.codegrid.net/series/2026-form-validation/
 - デモ: https://codegrid.github.io/2026-form-validation/
